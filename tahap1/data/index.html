@@ -4,30 +4,7 @@
     <title>HortiLink Web Interface</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-      }
-      h1 {
-        color: green;
-      }
-      .sensor-data {
-        font-size: 20px;
-        margin-bottom: 20px;
-      }
-      .control-btn {
-        padding: 10px 20px;
-        margin: 10px;
-        background-color: #4caf50;
-        color: white;
-        border: none;
-        cursor: pointer;
-      }
-      .control-btn:active {
-        background-color: #45a049;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>HortiLink Dashboard</h1>
@@ -53,29 +30,6 @@
       Close Valve
     </button>
 
-    <script>
-      // Mengambil data sensor secara berkala dari ESP
-      setInterval(() => {
-        fetch('/getData')
-          .then((response) => response.json())
-          .then((data) => {
-            document.getElementById('temperature').innerText = data.temperature;
-            document.getElementById('humidity').innerText = data.humidity;
-            document.getElementById('ph').innerText = data.ph;
-            document.getElementById('ec').innerText = data.ec;
-          });
-      }, 5000); // Update setiap 5 detik
-
-      // Mengirim perintah untuk mengontrol pompa/valve
-      function sendCommand(command) {
-        fetch('/control?device=' + command).then((response) => {
-          if (response.ok) {
-            alert('Command sent: ' + command);
-          } else {
-            alert('Failed to send command');
-          }
-        });
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

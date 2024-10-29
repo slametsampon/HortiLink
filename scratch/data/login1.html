@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>IoT DATA LOGGER - Login</title>
+  </head>
+  <body>
+    <div class="topnav">
+      <ul>
+        <li id="home"><a href="/">Home</a></li>
+        <li id="report"><a href="/report">Report</a></li>
+        <li id="config"><a href="/config">Config</a></li>
+        <li id="login"><a href="/login" class="disabled-link">Login</a></li>
+        <li id="logout">
+          <a href="/logout" onclick="return confirm('Are you sure to logout ?')"
+            >Logout</a
+          >
+        </li>
+        <li id="about"><a href="#">About</a></li>
+        <li id="activeUser">User</li>
+      </ul>
+    </div>
+    <h2>Login Form</h2>
+
+    <form action="/login" method="POST">
+      <div class="imgcontainer">
+        <img src="avatar.jpg" alt="Avatar" class="avatar" />
+      </div>
+
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required />
+
+        <label for="psw"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          required
+        />
+
+        <button type="submit">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember" /> Remember
+          me
+        </label>
+      </div>
+
+      <div class="container" style="background-color: #f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+      </div>
+    </form>
+
+    <div id="loginStatus"></div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>IoT Data Logger</h2>
+        </div>
+        <div class="modal-body">
+          <p>HortiLink - IoT</p>
+          <p>Data Acquisition</p>
+          <p>And Control</p>
+        </div>
+        <div class="modal-footer">
+          <h5>By : Agro Mulya</h5>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="authentication.js"></script>
+  <script src="modal-dialog.js"></script>
+  <script src="login.js"></script>
+</html>

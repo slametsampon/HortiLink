@@ -58,7 +58,7 @@ canvas {
 #graphContainer {
   display: inline-block;
   text-align: left;
-  margin: 20px 0px 20px 0px;
+  margin: 5px 0px 20px 0px;
 }
 #key {
   width: 200px;

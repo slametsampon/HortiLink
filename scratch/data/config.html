@@ -27,7 +27,7 @@
           >
         </li>
         <li id="about"><a href="#">About</a></li>
-        <li id="activeUser">User</li>
+        <li id="activeUser" class="rounded-xl">User</li>
       </ul>
     </div>
 
@@ -55,14 +55,44 @@
               name="samplingTime"
               placeholder="6000"
             /><br /><br />
-            <input
-              type="checkbox"
-              id="enable_record"
-              onchange="enableRecord()"
-              name="enable_record"
-              value="Record"
-            />
-            <label for="enable_record"> Enable Record</label><br />
+            <div class="flex flex-row">
+              <div>
+                <input
+                  type="checkbox"
+                  id="enable_record"
+                  onchange="enableRecord()"
+                  name="enable_record"
+                  value="Record"
+                />
+                <label for="enable_record" class="text-left">
+                  Enable Record</label
+                >
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="simulate_sensor"
+                  onchange="enableRecord()"
+                  name="enable_record"
+                  value="Record"
+                />
+                <label for="enable_record" class="text-left">
+                  Simulate Sensor</label
+                >
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="simulate_web"
+                  onchange="enableRecord()"
+                  name="enable_record"
+                  value="Record"
+                />
+                <label for="enable_record" class="text-left">
+                  Simulate WEB</label
+                >
+              </div>
+            </div>
           </div>
           <hr
             style="
@@ -144,12 +174,12 @@
             <h2>IoT Data Logger</h2>
           </div>
           <div class="modal-body">
-            <p>It's for Final Task of</p>
-            <p>Mercu Buana - University</p>
-            <p>Electronic - Engineering</p>
+            <p>HortiLink - IoT</p>
+            <p>Data Acquisition</p>
+            <p>And Control</p>
           </div>
           <div class="modal-footer">
-            <h5>By : Salman Alfarisi - 583379</h5>
+            <h5>By : Agro Mulya</h5>
           </div>
         </div>
       </div>

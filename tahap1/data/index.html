@@ -1,35 +1,163 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HortiLink Web Interface</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>HORTILINK - Home</title>
   </head>
   <body>
-    <h1>HortiLink Dashboard</h1>
-    <div class="sensor-data">
-      <p>Temperature: <span id="temperature">Loading...</span> °C</p>
-      <p>Humidity: <span id="humidity">Loading...</span> %</p>
-      <p>pH Level: <span id="ph">Loading...</span></p>
-      <p>EC Level: <span id="ec">Loading...</span> mS/cm</p>
+    <div class="topnav">
+      <ul>
+        <li id="home"><a href="/" class="disabled-link">Home</a></li>
+        <li id="report"><a href="/report">Report</a></li>
+        <li id="config"><a href="/config">Config</a></li>
+        <li id="login"><a href="/login">Login</a></li>
+        <li id="logout">
+          <a href="/logout" onclick="return confirm('Are you sure to logout ?')"
+            >Logout</a
+          >
+        </li>
+        <li id="about"><a href="#">About</a></li>
+        <li id="activeUser" class="rounded-xl">User</li>
+      </ul>
     </div>
-
-    <h2>Device Controls</h2>
-    <button class="control-btn" onclick="sendCommand('pump_on')">
-      Turn Pump ON
-    </button>
-    <button class="control-btn" onclick="sendCommand('pump_off')">
-      Turn Pump OFF
-    </button>
-    <br />
-    <button class="control-btn" onclick="sendCommand('valve_open')">
-      Open Valve
-    </button>
-    <button class="control-btn" onclick="sendCommand('valve_close')">
-      Close Valve
-    </button>
-
-    <script src="script.js"></script>
+    <div
+      id="wrapper"
+      class="border rounded-xl border-blue-600 text-xl font-bold"
+      style="background-image: url('backgroundLandingPage.webp')"
+    >
+      <div class="text-2xl text-green-800 bg-green-50 rounded-xl bg-opacity-75">
+        Dashboard
+      </div>
+      <div class="flex flex-row">
+        <img class="rounded-xl" src="logoHortiLink.jpg" alt="Logo hortilink" />
+        <div class="bg-green-50 bg-opacity-50 rounded-3xl p-2 text-xl">
+          <span id="time">16:45:41</span>
+          Horticulture<br />
+          Node : 7
+        </div>
+      </div>
+      <div
+        class="flex flex-row mt-2 mb-1 bg-green-400 bg-opacity-50 rounded-xl"
+      >
+        <div class="text-green-800">
+          Pump
+          <div class="flex flex-row">
+            <label class="mt-1 inline-flex cursor-pointer items-center">
+              <input type="checkbox" value="Pump_1" class="peer sr-only" />
+              <span
+                class="ms-3 p-2 text-sm font-bold text-gray-900 dark:text-gray-300"
+                >1.
+              </span>
+              <div
+                class="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"
+              ></div>
+            </label>
+            <label class="mt-1 inline-flex cursor-pointer items-center">
+              <input type="checkbox" value="Pump_1" class="peer sr-only" />
+              <span
+                class="ms-3 p-2 text-sm font-bold text-gray-900 dark:text-gray-300"
+                >2.
+              </span>
+              <div
+                class="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"
+              ></div>
+            </label>
+          </div>
+        </div>
+        <div class="text-green-800">
+          Valve
+          <div class="flex flex-row">
+            <label class="mt-1 inline-flex cursor-pointer items-center">
+              <input type="checkbox" value="Pump_1" class="peer sr-only" />
+              <span
+                class="ms-3 p-2 text-sm font-bold text-gray-900 dark:text-gray-300"
+                >1.
+              </span>
+              <div
+                class="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"
+              ></div>
+            </label>
+            <label class="mt-1 inline-flex cursor-pointer items-center">
+              <input type="checkbox" value="Pump_1" class="peer sr-only" />
+              <span
+                class="ms-3 p-2 text-sm font-bold text-gray-900 dark:text-gray-300"
+                >2.
+              </span>
+              <div
+                class="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"
+              ></div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div id="dialContainer">
+        <div id="dial_1">
+          <div class="bg-green-50 rounded-xl">Temperature</div>
+          <canvas
+            id="canvasTemp"
+            width="150"
+            height="125"
+            style="border: 1px solid #000000"
+          >
+          </canvas>
+        </div>
+        <div id="dial_2">
+          <div class="bg-green-50 rounded-xl">Humidity</div>
+          <canvas
+            id="canvasHumid"
+            width="150"
+            height="125"
+            style="border: 1px solid #000000"
+          >
+          </canvas>
+        </div>
+      </div>
+      <!--  'dialContainer'  -->
+      <div id="graphContainer">
+        <div class="bg-green-50 rounded-xl">Trending</div>
+        <canvas
+          id="graph"
+          width="340"
+          height="150"
+          style="border: 1px solid #000000; background-color: white"
+        >
+        </canvas>
+        <div id="key" class="mt-1 text-lg">
+          <div>
+            <div class="box red"></div>
+            Temperature
+          </div>
+          <div>
+            <div class="box blue"></div>
+            Humidity
+          </div>
+        </div>
+      </div>
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>IoT Data Control</h2>
+          </div>
+          <div class="modal-body">
+            <p>HortiLink - IoT</p>
+            <p>Data Acquisition</p>
+            <p>And Control</p>
+          </div>
+          <div class="modal-footer">
+            <h5>By : Agro Mulya</h5>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
+  <script src="authentication.js"></script>
+  <script src="widgetsClass.js"></script>
+  <script src="modal-dialog.js"></script>
+  <script src="index.js"></script>
 </html>

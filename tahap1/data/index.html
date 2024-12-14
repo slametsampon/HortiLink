@@ -1,138 +1,195 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="tailwindcss.css" />
+    <link rel="stylesheet" type="text/css" href="modal.css" />
     <title>HORTILINK - Home</title>
   </head>
   <body>
-    <div class="topnav">
-      <ul>
-        <li id="home"><a href="/" class="disabled-link">Home</a></li>
-        <li id="report"><a href="/report">Report</a></li>
-        <li id="config"><a href="/config">Config</a></li>
-        <li id="login"><a href="/login">Login</a></li>
-        <li id="logout">
-          <a href="/logout" onclick="return confirm('Are you sure to logout ?')"
-            >Logout</a
-          >
-        </li>
-        <li id="about"><a href="#">About</a></li>
-        <li id="activeUser" class="rounded-xl">User</li>
-      </ul>
-    </div>
     <div
-      id="wrapper"
-      class="border rounded-xl border-blue-600 text-xl font-bold"
+      class="relative w-full h-dvh bg-cover bg-center"
       style="background-image: url('backgroundLandingPage.webp')"
     >
-      <div class="text-2xl text-green-800 bg-green-50 rounded-xl bg-opacity-75">
-        Dashboard
-      </div>
-      <div class="flex flex-row">
-        <img class="rounded-xl" src="logoHortiLink.jpg" alt="Logo hortilink" />
-        <div class="bg-green-50 bg-opacity-50 rounded-3xl p-2 text-xl">
-          <span id="time">16:45:41</span>
-          Horticulture<br />
-          Node : 7
-        </div>
-      </div>
       <div
-        class="flex flex-row mt-2 mb-1 bg-green-400 bg-opacity-50 rounded-xl"
-      >
-        <div class="text-green-800">
-          Pump
-          <div class="flex flex-row">
-            <label class="mt-1 inline-flex cursor-pointer items-center">
-              <input type="checkbox" value="Pump_1" class="peer sr-only" />
-              <span
-                class="ms-3 p-2 text-sm font-bold text-gray-900 dark:text-gray-300"
-                >1.
-              </span>
-              <div
-                class="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"
-              ></div>
-            </label>
-            <label class="mt-1 inline-flex cursor-pointer items-center">
-              <input type="checkbox" value="Pump_1" class="peer sr-only" />
-              <span
-                class="ms-3 p-2 text-sm font-bold text-gray-900 dark:text-gray-300"
-                >2.
-              </span>
-              <div
-                class="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"
-              ></div>
-            </label>
-          </div>
+        class="absolute inset-0"
+        style="background-color: rgba(0, 0, 0, 0.5)"
+      ></div>
+
+      <div class="relative">
+        <!-- Top Navigation  -->
+        <div class="bg-blue-700 text-white px-3 py-1">
+          <ul class="flex flex-row justify-between p-1">
+            <li id="home">
+              <a
+                href="/"
+                class="pointer-events-none bg-green-600 px-2 rounded-xl"
+                >Home</a
+              >
+            </li>
+            <li id="report">
+              <a
+                href="/report"
+                class="hover:bg-slate-400 hover:text-black rounded-lg px-2"
+                >Report</a
+              >
+            </li>
+            <li id="config">
+              <a
+                href="/config"
+                class="hover:bg-slate-400 hover:text-black rounded-lg px-2"
+                >Config</a
+              >
+            </li>
+            <li id="login"><a href="/login">Login</a></li>
+            <li
+              id="logout"
+              class="hover:bg-slate-400 hover:text-black rounded-lg px-2"
+            >
+              <a
+                href="/logout"
+                class="hover:bg-slate-400 hover:text-black rounded-lg px-2"
+                onclick="return confirm('Are you sure to logout ?') "
+                >Logout</a
+              >
+            </li>
+            <li
+              id="about"
+              class="hover:bg-slate-400 hover:text-black rounded-lg px-2"
+            >
+              <a href="#">About</a>
+            </li>
+            <li id="activeUser" class="rounded-xl bg-green-600 px-2">User</li>
+          </ul>
         </div>
-        <div class="text-green-800">
-          Valve
-          <div class="flex flex-row">
-            <label class="mt-1 inline-flex cursor-pointer items-center">
-              <input type="checkbox" value="Pump_1" class="peer sr-only" />
-              <span
-                class="ms-3 p-2 text-sm font-bold text-gray-900 dark:text-gray-300"
-                >1.
-              </span>
-              <div
-                class="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"
-              ></div>
-            </label>
-            <label class="mt-1 inline-flex cursor-pointer items-center">
-              <input type="checkbox" value="Pump_1" class="peer sr-only" />
-              <span
-                class="ms-3 p-2 text-sm font-bold text-gray-900 dark:text-gray-300"
-                >2.
-              </span>
-              <div
-                class="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"
-              ></div>
-            </label>
-          </div>
-        </div>
-      </div>
-      <div id="dialContainer">
-        <div id="dial_1">
-          <div class="bg-green-50 rounded-xl">Temperature</div>
-          <canvas
-            id="canvasTemp"
-            width="150"
-            height="125"
-            style="border: 1px solid #000000"
-          >
-          </canvas>
-        </div>
-        <div id="dial_2">
-          <div class="bg-green-50 rounded-xl">Humidity</div>
-          <canvas
-            id="canvasHumid"
-            width="150"
-            height="125"
-            style="border: 1px solid #000000"
-          >
-          </canvas>
-        </div>
-      </div>
-      <!--  'dialContainer'  -->
-      <div id="graphContainer">
-        <div class="bg-green-50 rounded-xl">Trending</div>
-        <canvas
-          id="graph"
-          width="340"
-          height="150"
-          style="border: 1px solid #000000; background-color: white"
+        <!-- wrapper  -->
+        <div
+          class="border-2 border-slate-300 w-[400px] p-5 rounded-xl mx-auto mt-6 text-center text-xl font-bold"
         >
-        </canvas>
-        <div id="key" class="mt-1 text-lg">
-          <div>
-            <div class="box red"></div>
-            Temperature
+          <div
+            class="text-2xl text-green-800 bg-green-50 rounded-xl bg-opacity-75"
+          >
+            Dashboard
           </div>
-          <div>
-            <div class="box blue"></div>
-            Humidity
+          <!--  Logo & Time  -->
+          <div class="flex flex-row mt-3 justify-between">
+            <img
+              class="rounded-xl"
+              src="logoHortiLink.jpg"
+              alt="Logo hortilink"
+              width="150"
+            />
+            <div class="bg-green-50 bg-opacity-50 rounded-3xl p-2 text-xl">
+              <span id="time">16:45:41</span><br />
+              Horticulture<br />
+              Node : 7
+            </div>
+          </div>
+          <!--  Pump & Valve  -->
+          <div
+            class="flex flex-row mt-3 mb-1 bg-green-400 bg-opacity-75 rounded-xl justify-between"
+          >
+            <div class="text-black">
+              Pump
+              <div class="flex flex-row">
+                <label class="mt-1 inline-flex cursor-pointer items-center">
+                  <input type="checkbox" value="Pump_1" class="peer sr-only" />
+                  <span
+                    class="ms-3 py-2 text-sm font-bold text-gray-900 dark:text-gray-300"
+                    >1.
+                  </span>
+                  <div
+                    class="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"
+                  ></div>
+                </label>
+                <label class="mt-1 inline-flex cursor-pointer items-center">
+                  <input type="checkbox" value="Pump_1" class="peer sr-only" />
+                  <span
+                    class="ms-3 py-2 text-sm font-bold text-gray-900 dark:text-gray-300"
+                    >2.
+                  </span>
+                  <div
+                    class="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"
+                  ></div>
+                </label>
+              </div>
+            </div>
+            <div class="text-black px-6">
+              Valve
+              <div class="flex flex-row">
+                <label class="mt-1 inline-flex cursor-pointer items-center">
+                  <input type="checkbox" value="Pump_1" class="peer sr-only" />
+                  <span
+                    class="ms-3 py-2 text-sm font-bold text-gray-900 dark:text-gray-300"
+                    >1.
+                  </span>
+                  <div
+                    class="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"
+                  ></div>
+                </label>
+                <label class="mt-1 inline-flex cursor-pointer items-center">
+                  <input type="checkbox" value="Pump_1" class="peer sr-only" />
+                  <span
+                    class="ms-3 py-2 text-sm font-bold text-gray-900 dark:text-gray-300"
+                    >2.
+                  </span>
+                  <div
+                    class="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"
+                  ></div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <!--  Dial  -->
+          <div class="flex flex-row justify-between mt-3">
+            <div id="dial_1">
+              <div class="bg-green-50 rounded-xl">Temperature</div>
+              <canvas
+                id="canvasTemp"
+                width="150"
+                height="125"
+                style="
+                  border: 1px solid #000000;
+                  background-color: rgba(208, 237, 144, 0.5);
+                "
+              >
+              </canvas>
+            </div>
+            <div id="dial_2">
+              <div class="bg-green-50 rounded-xl">Humidity</div>
+              <canvas
+                id="canvasHumid"
+                width="150"
+                height="125"
+                style="
+                  border: 1px solid #000000;
+                  background-color: rgba(110, 228, 244, 0.5);
+                "
+              >
+              </canvas>
+            </div>
+          </div>
+          <!--  Trending  -->
+          <div class="text-left mt-3">
+            <div class="bg-green-50 rounded-xl mb-1">Trending</div>
+            <canvas
+              id="graph"
+              width="355"
+              height="150"
+              style="border: 1px solid #000000; background-color: white"
+            >
+            </canvas>
+            <div class="mt-1 text-lg flex flex-row justify-between">
+              <div class="flex flex-row">
+                <div class="box-border w-2.5 h-4 bg-red-700 bor"></div>
+                Temperature
+              </div>
+              <div class="flex flex-row">
+                <div class="box-border w-2.5 h-4 bg-blue-700 bor"></div>
+                Humidity
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="tailwindcss.css" />
+    <link rel="stylesheet" type="text/css" href="modal.css" />
+    <title>HORTILINK - Config</title>
+  </head>
+  <body>
+    <!-- Top Navigation  -->
+    <div class="bg-blue-700 text-white px-3 py-1">
+      <ul class="flex flex-row justify-between p-1">
+        <li id="home">
+          <a
+            href="/"
+            class="hover:bg-slate-400 hover:text-black rounded-lg px-2"
+            >Home</a
+          >
+        </li>
+        <li id="report">
+          <a
+            href="/report"
+            class="hover:bg-slate-400 hover:text-black rounded-lg px-2"
+            >Report</a
+          >
+        </li>
+        <li id="config">
+          <a
+            href="/config"
+            class="pointer-events-none bg-green-600 px-2 rounded-xl"
+            >Config</a
+          >
+        </li>
+        <li id="login"><a href="/login">Login</a></li>
+        <li id="logout">
+          <a
+            href="/logout"
+            class="hover:bg-slate-400 hover:text-black rounded-lg px-2"
+            onclick="return confirm('Are you sure to logout ?')"
+            >Logout</a
+          >
+        </li>
+        <li
+          id="about"
+          class="hover:bg-slate-400 hover:text-black rounded-lg px-2"
+        >
+          <a href="#">About</a>
+        </li>
+        <li id="activeUser" class="rounded-xl bg-green-600 px-2">User</li>
+      </ul>
+    </div>
+    <!-- Form Config  -->
+    <div class="mx-auto w-[400px] mt-3">
+      <h3 class="text-xl font-bold mb-6">Configuration - Form</h3>
+      <form
+        name="configForm"
+        class="mt-3"
+        action="/config"
+        method="POST"
+        onsubmit="return validateForm()"
+      >
+        <div class="mt-6 col-span-full">
+          <label for="date_time" class="block">Date - Time</label>
+          <div>
+            <input type="datetime-local" id="date_time" name="date_time" />
+          </div>
+        </div>
+        <div class="mt-3 col-span-full">
+          <label for="id_samplingTime">Sampling (ms)</label><br />
+          <input
+            type="text"
+            id="id_samplingTime"
+            name="samplingTime"
+            placeholder="6000"
+          />
+        </div>
+        <div class="mt-3">
+          <div>
+            <input
+              type="checkbox"
+              id="enable_record"
+              onchange="enableRecord()"
+              name="enable_record"
+              value="Record"
+            />
+            <label for="enable_record" class="text-left"> Enable Record</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="simulate_sensor"
+              onchange="enableRecord()"
+              name="enable_record"
+              value="Record"
+            />
+            <label for="enable_record" class="text-left">
+              Simulate Sensor</label
+            >
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="simulate_web"
+              onchange="enableRecord()"
+              name="enable_record"
+              value="Record"
+            />
+            <label for="enable_record" class="text-left"> Simulate WEB</label>
+          </div>
+        </div>
+        <hr
+          style="
+            height: 2px;
+            border-width: 0;
+            color: gray;
+            background-color: gray;
+          "
+        />
+
+        <input
+          type="radio"
+          id="configT"
+          name="config"
+          value="configT"
+          checked
+          onclick="getSensorCfg()"
+        />
+        <label for="configT">Temperature</label><br />
+
+        <input
+          type="radio"
+          id="configH"
+          name="config"
+          value="configH"
+          onclick="getSensorCfg()"
+        />
+        <label for="configH">Humidity</label><br /><br />
+
+        <label for="id_alfaEma">Alfa Ema (%)</label><br />
+        <input
+          type="text"
+          id="id_alfaEma"
+          name="alfaEma"
+          placeholder="80"
+        /><br /><br />
+
+        <label for="id_alarmH">Alarm High</label><br />
+        <input
+          type="text"
+          id="id_alarmH"
+          name="alarmH"
+          placeholder="90"
+        /><br /><br />
+
+        <label for="id_alarmL">Alarm Low</label><br />
+        <input
+          type="text"
+          id="id_alarmL"
+          name="alarmL"
+          placeholder="45"
+        /><br /><br />
+
+        <label for="id_indicatorH">Indicator High</label><br />
+        <input
+          type="id_text"
+          id="id_indicatorH"
+          name="indicatorH"
+          placeholder="100"
+        /><br /><br />
+
+        <label for="id_indicatorL">Indicator Low</label><br />
+        <input
+          type="text"
+          id="id_indicatorL"
+          name="indicatorL"
+          placeholder="0"
+        /><br /><br />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>IoT Data Control</h2>
+        </div>
+        <div class="modal-body">
+          <p>HortiLink - IoT</p>
+          <p>Data Acquisition</p>
+          <p>And Control</p>
+        </div>
+        <div class="modal-footer">
+          <h5>By : Agro Mulya</h5>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="authentication.js"></script>
+  <script src="modal-dialog.js"></script>
+  <script src="config.js"></script>
+</html>
